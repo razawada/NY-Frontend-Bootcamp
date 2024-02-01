@@ -1,30 +1,48 @@
-// Objects
-
 const person = {
     firstName: 'Jane',
-    lastName :'Doe',
+    lastName: 'Doe',
     age: 25,
     hobbies: ['reading', 'coding', 'hiking'],
 
     greet: function () {
-        console.log('Hello, my name is', this.firstName, 'Nice to meet you.')
+        console.log('Hello, my name is', this.firstName, 'Nice to meet you.');
     }
-}
+};
 
-//accessing object properties
+// Accessing Object Properties
 console.log(person.lastName);
-console.log(peerson.age);
+console.log(person.age);
 
-//modifying object 
+// Modifying Object Properties
+person.lastName = 'Smith';
+console.log(person.lastName);
 
-//accessing object methods
+// Accessing Object Methods
 person.greet();
 
-//adding 
+// Adding new properties to the object
+person.nationality = 'American';
+console.log(person.nationality);
 
-//nesting objects
-//const address {
-//    street: '123 Main St',
-//    city: 'New York',
-//    country: 'USA',
-//}
+// Adding new methods to the object
+person.introduce = function () {
+    // Template Literals
+    console.log(`I am ${this.firstName} ${this.lastName}. I am ${this.age}. years old`);
+};
+person.introduce();
+
+// Nesting Objects
+const address = {
+    street: '123 Main St',
+    city: 'New York',
+    country: 'USA'
+};
+
+person.location = address;
+console.log(person.location.street);
+
+// Object Destructuring
+const { firstName, lastName, age } = person;
+console.log(firstName, lastName, age);
+
+console.log(person.hobbies);

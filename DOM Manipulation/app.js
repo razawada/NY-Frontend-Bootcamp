@@ -9,7 +9,7 @@ const emailError = document.getElementById("emailError");
 form.addEventListener("submit", handleSubmit);
 
 function handleSubmit(event) {
-    event/preventDefault(); //prevent form from submitting
+    event.preventDefault(); //prevent form from submitting
     
     const isValid = validateForm();
 

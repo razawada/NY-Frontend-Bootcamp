@@ -1,71 +1,79 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>My Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href ="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+    
 </head>
 <body>
-    <div class="row" id="main-body">
-        <div class="col ms-5">
-            <h1>Hello, I'm Rance</h1>
-            <h2>I'm learning front-end.</h2>
-            <p>I'm coming from a life science background and feel most comfortable with JavaScript.</p>
+    <nav id="desktop-nav">
+        <div class="logo">Rance Zawada</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
-     
-
-        <div class="col">
-            <img class="rounded-circle" src="duomo.jpeg"alt="Rance in Florence in front of Duomo" height="400" width="auto">
-          
-        </div>
-
-    </div>
-
-    <div class="container">
-        <h1>Projects</h1>
-
-        <!-- Bootstrap Card Component -->
-        <div class="container m-3">
-            <div class="row">
-                <div class="col">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/300" class="card-img-top" alt="image">
-                        <div class="card-body">
-                            <h5>
-                                Project 1
-                            </h5>
-                            <p class="card-text">Here is a first example project</p>
-                            <a href="#">Read more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/300" class="card-img-top" alt="image">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                Project 2
-                            </h5>
-                            <p>Here is a second project space example.</p>
-                            <a href="#">Read more</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card">
-                        <img src="https://via.placeholder.com/300" class="card-img-top" alt="image">
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                Project 3
-                            </h5>
-                            <p>Here is yet another project</p>
-                            <a href="#">Read more</a>
-                        </div>
-                    </div>
-                </div>
+    </nav>
+    <nav id="hamburger-nav"></nav>
+        <div class="logo">Rance Zawada</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
             </div>
         </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"  crossorigin="anonymous"></script>
+    
+    <section id="profile">
+        <div class="section_pic-container">
+            <img src="./Assets/duomo.jpeg" alt="Rance Zawada profile picture"
+            width="400" 
+            height="500"/>
+        </div>
+        <div class="section_text">
+            <p class="section_text_p1">Hello, I'm</p>
+            <h1 class="title">Rance Zawada</h1>
+            <p class="section_text_p2">Frontend Developer</p>
+            <div class="btn-container">
+                <button
+                class="btn btn-color-2"
+                onclick="window.open('.Assets/ZawadaCV.pdf')">Download CV</button>
+            </div>
+        </div>
+
+    </section>
+
+
+    <br></br>
+    <br></br>
+
+    <footer class="text-center">
+        &copy; <span class="year"></span> by Zawada Design 
+    </footer>
+      
+      <script>
+        const footerYear = document.querySelectorAll(".year");
+        footerYear.forEach(copyright => {
+          copyright.innerHTML = new Date().getFullYear();
+        });
+      </script>
+
+      <script src="script.js"></script>
+
+
 </body>
 
 
